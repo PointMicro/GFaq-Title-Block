@@ -1,0 +1,20 @@
+{
+
+  "manifest_version": 2,
+  "name": "GF-Block",
+  "version": "1.0",
+
+  "description": "Blocks listed keywords on all boards for GameFAQs",
+
+  "icons": {
+    "48": "icons/icon.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.mozilla.org/*"],
+      "js": ["content/content.js"]
+    }
+  ]
+
+}
