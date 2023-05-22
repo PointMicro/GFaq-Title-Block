@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Filter Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    #logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    #save-button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .box-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .box {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    #add-button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div id="logo">[LOGO HERE]</div>
+    <button id="save-button">Save</button>
+  </div>
+
+  <div id="container">
+    <div class="box-container">
+      <div class="box">
+        <label for="keyword">Keyword:</label>
+        <input type="text" id="keyword" name="keyword">
+      </div>
+      <div class="box">
+        <label for="board">Board:</label>
+        <input type="text" id="board" name="board">
+      </div>
+      <button id="add-button">Add</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("add-button").addEventListener("click", function() {
+      var container = document.getElementById("container");
+      var boxContainer = document.createElement("div");
+      boxContainer.classList.add("box-container");
+
+      var box1 = document.createElement("div");
+      box1.classList.add("box");
+      box1.innerHTML = '<label for="keyword">Keyword:</label><input type="text" id="keyword" name="keyword">';
+
+      var box2 = document.createElement("div");
+      box2.classList.add("box");
+      box2.innerHTML = '<label for="board">Board:</label><input type="text" id="board" name="board">';
+
+      var addButton = document.createElement("button");
+      addButton.id = "add-button";
+      addButton.textContent = "Add";
+
+      boxContainer.appendChild(box1);
+      boxContainer.appendChild(box2);
+      boxContainer.appendChild(addButton);
+
+      container.appendChild(boxContainer);
+    });
+  </script>
+</body>
+</html>
